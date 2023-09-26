@@ -9,7 +9,7 @@ namespace FriendsWebApp.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public List<Friend> friends { get; set; }= new List<Friend>();//give it a null value
+        public List<Friend> friends { get; set; }= new List<Friend>();//Public, so the cshtml page can use it. give it a null value
 
         private string? connectionString = null;
 

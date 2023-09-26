@@ -47,13 +47,14 @@ namespace FriendsWebApp.Pages
             {
                 //Upload the image
                 //Save image to /images folder
-                //string path = Path.Combine(_env.ContentRootPath, "wwwroot\\images", cupcake.ImageName);
-                //using (FileStream filestream = new FileStream(path, FileMode.Create))
-                //{
-                //    imageFile.CopyTo(filestream);
-                //}
+                string path = Path.Combine(_env.ContentRootPath+"\\wwwroot\\images\\", Friend.ImageName);
+                using (FileStream filestream = new FileStream(path, FileMode.Create))
+                {
+                    ImageUpload.CopyTo(filestream);
+                }
                 return RedirectToPage("Index");
             }
+
             else
             {
                 return Page();

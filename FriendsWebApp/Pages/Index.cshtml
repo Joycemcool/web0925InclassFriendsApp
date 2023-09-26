@@ -27,6 +27,7 @@
             <tbody>
                 @foreach(Friend friend in Model.friends)
                 {
+                    string imageUrl = "https://"+Request.Host.Value +"/images/"+ friend.ImageName;
                     <tr>
                         <td>
                             image here

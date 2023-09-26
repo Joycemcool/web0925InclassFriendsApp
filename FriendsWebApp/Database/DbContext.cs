@@ -57,7 +57,7 @@ namespace FriendsWebApp.Database
 
         public int AddNewFriend(Friend friend)
         {
-            int rowAffected = 0;
+            int rowsAffected = 0;
             string sql = "INSERT INTO [dbo].[Friends] ([FirstName],[LastName],[ImageName]) VALUES (@FirstName, @LastName, @ImageName )";
             SqlCommand command = new SqlCommand(sql, connection);
 
@@ -67,11 +67,11 @@ namespace FriendsWebApp.Database
 
 
             connection.Open();
-            rowAffected = command.ExecuteNonQuery();
+            rowsAffected = command.ExecuteNonQuery();
 
             connection.Close();
 
-            return rowAffected;
+            return rowsAffected;
 
         }//close AddnewFriend
 
