@@ -34,16 +34,18 @@ namespace FriendsWebApp.Pages
 
         public IActionResult OnPost()
         {
-            int rowAffected = 0;
+            int rowsAffected = 0;
+
+           // string imageName = DateTime.Now.ToString()+ImageUpload.FileName;//Create a unique file name here
             Friend.ImageName = ImageUpload.FileName;
             if (connectionString != null)
             {
                 DbContext dbContext = new DbContext(connectionString);
                 Friend.ImageName = ImageUpload.FileName;
-                rowAffected=dbContext.AddNewFriend(Friend);
+                rowsAffected=dbContext.AddNewFriend(Friend);
             }
 
-            if (rowAffected == 1)                 
+            if (rowsAffected == 1)                 
             {
                 //Upload the image
                 //Save image to /images folder
